@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
         borderColor: BaseColors.secondary,
         borderRadius: 10,
         margin: 10,
+        alignItems:'center',
+        alignContent:'center'
     },
     innerContainer:{
         flexDirection: 'row',
@@ -90,7 +92,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     image:{
-        height:100,
+        height:150,
+        width:150,
         resizeMode: 'contain',
         flex: 2
     },
