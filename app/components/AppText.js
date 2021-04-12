@@ -11,7 +11,10 @@ function AppText({style, children}) {
 const styles = StyleSheet.create({
     text:{
         fontSize:20,
-        fontFamily: Platform.OS === 'android' ? "monospace" : "Avenir-Roman"
+        fontFamily: Platform.OS === 'android' ? "monospace" : "Avenir-Roman",
+        flex:1,
+        flexShrink:1,
+        justifyContent:"center"
     },
 })
 

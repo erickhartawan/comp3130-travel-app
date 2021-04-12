@@ -1,43 +1,51 @@
 import React from 'react'
 import { View, Text,Image,StyleSheet} from 'react-native'
+import AppButton from '../components/AppButton'
 import AppIcon from '../components/AppIcon'
 import AppScreen from '../components/AppScreen'
+import AppText from '../components/AppText'
 import BaseColors from '../config/BaseColors'
+
 const SplashScreen = ({navigation}) => {
     setTimeout(() => {
-        navigation.navigate("Login")
-    }, 3000);
+        navigation.navigate("Register")
+    }, 2000);
     return (
         <AppScreen>
             <Image 
             style={styles.logo}
-            source={require('./../../assets/logoCorrect.png')}
+            source={require('./../../assets/newLogo.png')}
             />
-            <Text style={styles.version}>
+            <AppText style={styles.version}>
                 v.0.0.1
-            </Text>
-            <Text style={styles.message}>
-                You will be redirected to Register page in 3s
-            </Text>
+            </AppText>
+            <AppText style={styles.message}>
+                You will be redirected to Register page in 2s
+            </AppText>
+            <AppButton title='not redirected? click here instead' onPress={() => navigation.navigate("Register")}></AppButton>
         </AppScreen>
     )
 }
 
 const styles = StyleSheet.create({
     logo:{
-        flex:2,
+        flex:4,
         width:'100%',
         resizeMode: 'contain'
     },
     version:{
         flex:2,
         alignSelf:'center',
-        color: BaseColors.secondary
+        color: BaseColors.text,
+        padding: 20
     },
     message:{
         flex:1,
         alignSelf:'center',
-        color: BaseColors.primary 
+        flexShrink:2,
+        color: BaseColors.text,
+        padding: 20,
+        // flexBasis:'content'
     }
 })
 

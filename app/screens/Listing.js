@@ -1,35 +1,31 @@
 import React, { useState } from 'react'
-import { View, Text,FlatList } from 'react-native'
+import {FlatList } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+
+
 import AppListCard from '../components/AppListCard';
 import AppScreen from '../components/AppScreen';
 import travelData from '../travelData'
 
-const myTravelList =[
-    {
-        id:1,
-        title:'Hobart',
-        subtitle:'Somewhere in between Australia and New Zealand',
-        rating: '10 out of 10',
-        state: 'TAS',
-        image: require(`../../assets/cities/Hobart.jpg`),
-    },
-    {
-        id:2, 
-        title:'Brisbane',
-        subtitle:'Most hooman in Queensland',
-        rating:'9 out of 10',
-        state: 'QLD',
-        image: require(`../../assets/cities/Brisbane.jpg`),
-    },
-]
 
-const MyList = () => {
-    const [travelList,setTravelList] = useState(myTravelList)
+
+const Listing = ({category}) => {
+    const navigation = useNavigation();
+
+    var updatedTravelList = '';
+    if(category == "ALL"){
+        updatedTravelList = travelData
+    } else{
+        updatedTravelList = travelData.filter((destination)=> destination.state == category)
+    }
+    const [travelList,setTravelList] = useState(updatedTravelList);
 
     const handleDelete = (travel) => {
         const newTravelList =  travelList.filter (item => item.id !== travel.id);
         setTravelList(newTravelList);
     }
+
+
     return (
         <AppScreen>
             <FlatList
@@ -42,14 +38,20 @@ const MyList = () => {
                     rating={item.rating}
                     image={item.image}
                     onDelete={() => handleDelete(item)}
+                    handlePress={() => navigation.navigate("Details",{
+                            image:item.image,
+                            title: item.title,
+                            subtitle: item.subtitle,
+                            rating:item.rating,
+                            description: item.description
+                    })}
                 >
                 </AppListCard>
             }
             >
-
             </FlatList>
         </AppScreen>
     )
 }
 
-export default MyList
+export default Listing

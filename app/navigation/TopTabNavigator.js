@@ -4,16 +4,17 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import BaseColors from '../config/BaseColors';
 import MyList from '../screens/MyList'
-import SavedScreen from '../screens/SavedScreen'
+import ExploreScreen from '../screens/ExploreScreen'
 import SettingScreen from '../screens/SettingScreen'
+import CategoryNavigator from './CategoryNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
 
 const TopTabNavigator = () => (
     <Tab.Navigator tabBaroptions={{activeTintColor:BaseColors.secondary, activeBackgroundColor: BaseColors.primary }}>
-        <Tab.Screen name='MyList' component={MyList} />
-        <Tab.Screen name='SavedScreen' component={SavedScreen} />
+        <Tab.Screen name='MyList' component={MyList} options={{title:'My Account'}}/>
+        <Tab.Screen name='ExploreScreen' component={ExploreScreen} />
         <Tab.Screen name='SettingScreen' component={SettingScreen} />
     </Tab.Navigator>
 )

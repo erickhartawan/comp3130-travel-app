@@ -5,11 +5,11 @@ import { Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 import BaseColors from '../config/BaseColors';
 
 
-function AppButton({title, color="primary", onPress}) {
+function AppButton({style, title, textStyle ,color="primary", onPress}) {
     return (
         <TouchableOpacity onPress={onPress}>
-            <View style={[styles.button,{backgroundColor:BaseColors[color]}]}>
-                <Text style={styles.text}> {title}  </Text>
+            <View style={[styles.button,{backgroundColor:BaseColors[color]},style]}>
+                <Text style={[styles.text,textStyle]}> {title}  </Text>
             </View>
         </TouchableOpacity>
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text:{
-        color: BaseColors.tertiary,
+        color: BaseColors.text,
         fontSize: 16,
         textTransform: 'uppercase',
         fontWeight: 'bold',

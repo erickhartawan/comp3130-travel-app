@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         flex:1,
         width:'100%',
-
     },
 })
 export default AppTextInput;

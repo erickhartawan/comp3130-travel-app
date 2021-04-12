@@ -15,20 +15,20 @@ import AppButton from '../components/AppButton';
 const schema = Yup.object().shape(
     {
         email: Yup.string().required().email().label("Email"),
-        password:  Yup.string().required().min(4).max(8).label("Password"),
+        password:  Yup.string().required().min(4).max(16).label("Password"),
     }
 );
 
 const users = [
     {
-        name:"Billie Eilish",
-        email: "billie@gmail.com",
+        name:"Erick Hartawan",
+        email: "erick@gmail.com",
         password: "1234"
     },
     {
-        name:"Jon Snow",
-        email: "js@gmail.com",
-        password: "2345"
+        name:"User",
+        email: "user@gmail.com",
+        password: "1234"
     },
 ];
 
@@ -39,8 +39,6 @@ const validateUser = ({email, password}) => {
 };
 
 function LoginScreen({navigation}) {
-
-
     return (
         <AppScreen style={styles.container}>
                 <Formik
@@ -49,7 +47,7 @@ function LoginScreen({navigation}) {
                             if(validateUser(values)){    
                                 console.log(values);
                                 resetForm();
-                                navigation.navigate("Home");
+                                navigation.navigate("MyList");
                             }
                             else{
                                 resetForm();
@@ -88,12 +86,9 @@ function LoginScreen({navigation}) {
                     {touched.password && <AppText style={{color:"red", fontSize:16}}>{errors.password}</AppText>}
                 </View> 
                 <AppButton title="Login" onPress={handleSubmit}/>
-                <AppButton title="goToHOME" onPress={() => navigation.navigate("Home")}/>
-
                     </>
                 )}
                  </Formik>
-                
         </AppScreen>
     );
 }
@@ -101,7 +96,7 @@ function LoginScreen({navigation}) {
 const styles = StyleSheet.create({
     container:{
         padding:20,
-        backgroundColor:BaseColors.otherColor,
+        backgroundColor:BaseColors.background,
         marginTop:0,
     },
     welcomeContainer:{

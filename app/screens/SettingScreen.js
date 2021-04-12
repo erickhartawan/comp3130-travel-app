@@ -1,11 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const SettingScreen = () => {
+
+import AppButton from '../components/AppButton'
+import AppScreen from '../components/AppScreen'
+
+const SettingScreen = ({navigation}) => {
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <AppScreen>
+            <AppButton title="Log off" onPress={() => navigation.navigate("Login")}/>
+        </AppScreen>
     )
 }
 
