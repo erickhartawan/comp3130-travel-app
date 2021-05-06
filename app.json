@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "travel-app-erick",
-    "slug": "travel-app-erick",
+    "name": "travel-app-co-erick",
+    "slug": "travel-app-co-rick",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Travel App for Erick Hartawan (45782334) developed for COMP3130 (Mobile Application Development) Major Project -1",
+    "githubUrl": "https://github.com/erickhartawan/comp3130-travel-app"
   }
 }

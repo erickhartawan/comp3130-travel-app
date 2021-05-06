@@ -16,7 +16,7 @@ const AppStack = createStackNavigator();
 
 const StackNavigator =() => (
     <AppStack.Navigator>
-        <AppStack.Screen name="welcome" component={SplashScreen} options={{headerShown:false,headerStyle:{backgroundColor:BaseColors.secondary}}}/>
+        <AppStack.Screen name="Welcome" component={SplashScreen} options={{headerShown:false,headerStyle:{backgroundColor:BaseColors.secondary}}}/>
         <AppStack.Screen name="Register" component={RegisterScreen} options={{headerStyle:{backgroundColor:BaseColors.primary}}}/>
         <AppStack.Screen name="Login" component={LoginScreen} options={{headerStyle:{backgroundColor:BaseColors.primary},headerTitleStyle:{color:BaseColors.text}}}/>
         <AppStack.Screen name="ALL" component={CategoryNavigator} options={{ headerTitle: props => <AppHeader {...props} /> }} />

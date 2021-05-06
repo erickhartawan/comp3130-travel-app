@@ -8,7 +8,7 @@ import AppScreen from '../components/AppScreen'
 const SettingScreen = ({navigation}) => {
     return (
         <AppScreen>
-            <AppButton title="Log off" onPress={() => navigation.navigate("Login")}/>
+            <AppButton title="Log off" onPress={() => navigation.navigate("Welcome")}/>
         </AppScreen>
     )
 }
