@@ -1,0 +1,3 @@
+{
+"mongoURI" : "mongodb+srv://travel-app:travel1234@erick-cluster.5ldpn.mongodb.net/travel-app?retryWrites=true&w=majority"
+}
