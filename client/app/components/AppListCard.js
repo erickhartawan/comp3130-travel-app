@@ -38,7 +38,7 @@ const AppListCard = ({title,subtitle,rating,handlePress,description,onPress, onD
 const styles = StyleSheet.create({
     container:{
         flexDirection: 'column',
-        backgroundColor: BaseColors.primary,
+        backgroundColor: BaseColors.secondary,
         color: BaseColors.text,
         padding: 7,
         borderStyle: 'solid',
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     innerContainer:{
         flexDirection: 'row',
-        backgroundColor: BaseColors.primary,
+        backgroundColor: BaseColors.secondary,
         color: BaseColors.text,
         flex:1
     },
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     textContainer:{
         flexDirection:'column',
-        backgroundColor:BaseColors.primary,
+        backgroundColor:BaseColors.secondary,
         padding:5,
     },
     title:{
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         flexShrink:1
     },
     pressableContainer:{
-        backgroundColor: BaseColors.primary,
+        backgroundColor: BaseColors.secondary,
         color: BaseColors.text,
         flex: 1,
     },

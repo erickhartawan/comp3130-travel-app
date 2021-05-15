@@ -32,6 +32,13 @@ router.post("/", (req,res) => {
     newListing.save().then(item => res.json(item))
 })
 
+router.delete(`/:id`,(req, res) => {
+    Listing.findOne({id: req.params.id})
+      .then(item => item.remove().then(() => res.json(item)))
+      .catch(err => res.status(404).json({ success: false }));
+
+  });
+
 
 
 

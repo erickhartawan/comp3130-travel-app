@@ -9,9 +9,9 @@ const AppHeader = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}> 
-            <AppButton textStyle={styles.textStyle} style={styles.headerButton} title="a" />
-            <AppButton textStyle={styles.textStyle} style={styles.headerButton} title="b" />
-            <AppButton textStyle={styles.textStyle} style={styles.headerButton} title='My List' onPress={() => navigation.navigate("MyList") } />
+            <AppButton textStyle={styles.textStyle} style={styles.headerButton} title="MyList" onPress={() => navigation.navigate("MyList")} />
+            <AppButton textStyle={styles.textStyle} style={styles.headerButton} title="" />
+            {/* <AppButton textStyle={styles.textStyle} style={styles.headerButton} title='Add Listing' onPress={() =>  } /> */}
         </View>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, AppState } from 'react-native'
 import AppButton from '../components/AppButton'
+import AppModal from '../components/AppModal'
 
 import AppScreen from '../components/AppScreen'
 
