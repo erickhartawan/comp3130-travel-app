@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+>
+  <View
+    accessible={true}
+    style={
+      Object {
+        "backgroundColor": "#4B77BE",
+        "marginBottom": 10,
+        "opacity": 1,
+        "zIndex": 18,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#581FFF",
+            "borderRadius": 20,
+            "justifyContent": "center",
+            "marginBottom": 10,
+            "padding": 15,
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#581FFF",
+          },
+          Object {
+            "backgroundColor": "#4B77BE",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFFAFA",
+              "fontSize": 16,
+              "fontWeight": "bold",
+              "textTransform": "uppercase",
+            },
+            undefined,
+          ]
+        }
+      >
+         
+          
+      </Text>
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`Screen renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#282828",
+        "flex": 1,
+        "overflow": "visible",
+        "padding": 20,
+        "width": "100%",
+      },
+      Object {
+        "alignSelf": "stretch",
+        "flex": 1,
+        "padding": 20,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</RCTSafeAreaView>
+`;
+
+exports[`Splash Screen renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#282828",
+        "flex": 1,
+        "overflow": "visible",
+        "padding": 20,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "flex": 4,
+          "resizeMode": "contain",
+          "width": "100%",
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexShrink": 1,
+            "fontFamily": "Avenir-Roman",
+            "fontSize": 20,
+            "justifyContent": "center",
+          },
+          Object {
+            "alignSelf": "center",
+            "color": "#FFFAFA",
+            "flex": 2,
+            "padding": 20,
+          },
+        ]
+      }
+    >
+       
+      v.0.0.1
+       
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "flexShrink": 1,
+            "fontFamily": "Avenir-Roman",
+            "fontSize": 20,
+            "justifyContent": "center",
+          },
+          Object {
+            "alignSelf": "center",
+            "color": "#FFFAFA",
+            "flex": 1,
+            "flexShrink": 2,
+            "padding": 20,
+          },
+        ]
+      }
+    >
+       
+      You will be redirected to Register page in 2s
+       
+    </Text>
+    <RNGestureHandlerButton
+      collapsable={false}
+      onGestureEvent={[Function]}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onHandlerStateChange={[Function]}
+      rippleColor={0}
+    >
+      <View
+        accessible={true}
+        style={
+          Object {
+            "marginBottom": 10,
+            "opacity": 1,
+            "zIndex": 18,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#581FFF",
+                "borderRadius": 20,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "padding": 15,
+                "width": "100%",
+              },
+              Object {
+                "backgroundColor": "#581FFF",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#FFFAFA",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                  "textTransform": "uppercase",
+                },
+                undefined,
+              ]
+            }
+          >
+             
+            not redirected? click here instead
+              
+          </Text>
+        </View>
+      </View>
+    </RNGestureHandlerButton>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`Text renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "flexShrink": 1,
+        "fontFamily": "Avenir-Roman",
+        "fontSize": 20,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+   
+   
+</Text>
+`;

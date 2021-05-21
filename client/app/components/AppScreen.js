@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
         alignSelf:'stretch',
         padding: 20,
         width:'100%',
-        backgroundColor: BaseColors.background
+        backgroundColor: BaseColors.background,
+        overflow: 'visible'
     },
     paddingView:{
         flex:1,

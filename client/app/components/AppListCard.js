@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Pressable , StyleSheet, Image} from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import BaseColors from '../config/BaseColors';
-import AppButton from './AppButton';
+import AppButton from './AppAbsoluteButton';
 import AppScreen from './AppScreen';
 
 import AppText from './AppText'
@@ -15,11 +15,11 @@ const AppListCard = ({title,subtitle,rating,handlePress,description,onPress, onD
         <Pressable sytle={styles.pressableContainer} onPress={handlePress}>
             <View style={styles.container}>
                 <View style={styles.innerContainer}>
-                    <Image source={image} style={styles.image} />
+                    <Image source={{uri: `${image}`}} style={styles.image} />
                     <AppScreen style={styles.textContainer}>
                         <AppText style={styles.title}>{title}</AppText>
                         <AppText style={styles.subtitle}>{subtitle}</AppText>
-                        <AppText style={styles.rating}>{rating}</AppText>
+                        <AppText style={styles.rating}>{`${rating} out of 10`}</AppText>
                     </AppScreen >
                 </View>
                 <View style={styles.buttonContainer}>

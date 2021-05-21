@@ -4,7 +4,7 @@ import AppDetailPage from '../components/AppDetailPage'
 import AppScreen from '../components/AppScreen'
 
 const TravelDetail = ({route, navigation}) => {
-    const {image,title, subtitle,rating,description} = route.params;
+    const {image,title, subtitle,rating,state,description} = route.params;
     return (
         <AppScreen>
             <AppDetailPage
@@ -12,6 +12,7 @@ const TravelDetail = ({route, navigation}) => {
                 title={title}
                 subtitle={subtitle}
                 rating={rating}
+                state={state}
                 description={description}
             />
         </AppScreen>

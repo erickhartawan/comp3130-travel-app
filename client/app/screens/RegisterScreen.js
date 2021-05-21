@@ -15,7 +15,7 @@ const schema = Yup.object().shape(
     {
         username: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
         email: Yup.string().required().email().label("Email"),
-        password:  Yup.string().required().min(4).max(16).label("Password"),
+        password:  Yup.string().required().min(4,'Please provide password at least 4 characters').max(16).label("Password"),
     }
 );
 

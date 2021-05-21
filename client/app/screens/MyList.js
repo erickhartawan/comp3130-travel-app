@@ -1,39 +1,45 @@
 import { useNavigation } from '@react-navigation/core';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text,FlatList } from 'react-native'
+import { useFocusEffect } from '@react-navigation/native'
+import axios from 'axios'
+
 import AppListCard from '../components/AppListCard';
 import AppScreen from '../components/AppScreen';
-import travelData from '../travelData'
 
-const myTravelList =[
-    {
-        id:1,
-        title:'Hobart',
-        subtitle:'Somewhere in between Australia and New Zealand',
-        rating: '10 out of 10',
-        state: 'TAS',
-        image: require(`../../assets/cities/Hobart.jpg`),
-        description: "Hobart offers a contrasting blend of heritage, scenery and culture, with world class activities and attractions nearby. Nestled amongst the foothills of kunanyi / Mt Wellington, Hobart combines heritage charm with a modern lifestyle in a setting of exceptional beauty. It's no wonder Lonely Planet has called Hobart one of the top ten spots to visit in the world right now."
-
-    },
-    {
-        id:2, 
-        title:'Brisbane',
-        subtitle:'Most hooman in Queensland',
-        rating:'9 out of 10',
-        state: 'QLD',
-        image: require(`../../assets/cities/Brisbane.jpg`),
-        description: "Brisbane is the capital of and most populated city in the Australian state of Queensland, and the third most populous city in Australia."
-    },
-]
 
 const MyList = () => {
     const navigation = useNavigation();
-    const [travelList,setTravelList] = useState(myTravelList)
+    const [travelList,setTravelList] = useState("");
+
+    useEffect(() =>{
+        axios.get("https://travel-server-erick.herokuapp.com/api/userlist")
+        .then(res =>{
+            let travelData = res.data;
+            console.log(travelData)
+            setTravelList(travelData);
+        }).catch(err => console.log(err))
+    },[])
+
+    useFocusEffect(() =>{
+            axios.get("https://travel-server-erick.herokuapp.com/api/userlist")
+            .then(res =>{
+                let travelData = res.data;
+                console.log(travelData)
+                setTravelList(travelData);
+            }).catch(err => console.log(err))
+
+
+       
+    })
 
     const handleDelete = (travel) => {
-        const newTravelList =  travelList.filter (item => item.id !== travel.id);
-        setTravelList(newTravelList);
+        let deletedItem ;
+        axios.delete(`https://travel-server-erick.herokuapp.com/api/userlist/${travel.id}`)
+        .then(res =>{
+            deletedItem = res.data;
+            setTravelList(travelList.filter(item => item.id !== deletedItem.id))
+        })
     }
     return (
         <AppScreen>

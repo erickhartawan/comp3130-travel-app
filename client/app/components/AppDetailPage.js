@@ -1,18 +1,37 @@
 import React from 'react'
-import { View, Text, StyleSheet,Image} from 'react-native'
+import { View, Text, StyleSheet,Image, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import BaseColors from '../config/BaseColors'
-import AppButton from './AppButton'
+import AppButton from './AppAbsoluteButton'
 import AppScreen from './AppScreen'
 import AppText from './AppText'
+import axios from 'axios';
+import uuid from 'react-native-uuid';
 
 
-const AppDetailPage = ({image,title, subtitle,rating,description}) => {
-const navigation = useNavigation();
+const AppDetailPage = ({image,title, subtitle,rating,state,description}) => {
+    const navigation = useNavigation();
+
+
+    const addToMyList = () => {
+        axios.post('https://travel-server-erick.herokuapp.com/api/userlist',{
+            id: Math.floor(Math.random() * 1000000),
+            title: title,
+            subtitle: subtitle,
+            rating: rating,
+            image: image,
+            state:state,
+            description: description
+        }).then(res => {
+            console.log('successfully added item to myList');
+            console.log(res.data)
+            Alert.alert("Data has been added to your list")
+        })
+    }
     return (
         <AppScreen  style={styles.container}>
-            <Image source={image} style={styles.image} />
+            <Image source={{uri: `${image}`}} style={styles.image} />
             <AppScreen  style={styles.textContainer}>
                 <AppText style={styles.title}>{title}</AppText>
                 <AppText style={styles.subtitle}>{subtitle}</AppText>
@@ -25,7 +44,7 @@ const navigation = useNavigation();
             </AppScreen>
         
         <View style={styles.buttonContainer}>
-            <AppButton title='Add to My List' color={BaseColors.tertiary}/>
+            <AppButton title='Add to My List' onPress={addToMyList} color={BaseColors.tertiary}/>
             <AppButton title='Back' color={BaseColors.tertiary} onPress={()=> navigation.goBack()}/>
         </View>
             </AppScreen >
